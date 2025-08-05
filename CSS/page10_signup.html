@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>회원가입</title>
+        <style>
+            body {
+                font-family: sans-serif;
+                background-color: #fff;
+            }
+            table {
+                width: 700px;
+                margin: 20px auto;
+                border: 1px solid none;
+            }
+            td {
+                padding: 10px;
+                border: none;
+            }
+            input[type='text'],
+            input[type='password'],
+            input[type='email'],
+            input[type='tel'],
+            input[type='date'] {
+                width: 200px;
+                padding: 5px;
+            }
+            .subtext {
+                font-size: 12px;
+                color: blue;
+                margin-top: 3px;
+            }
+            .section-header {
+                background-color: #00ccff;
+                color: black;
+                font-weight: bold;
+                text-align: left;
+            }
+            button {
+                padding: 5px 10px;
+                margin-left: 5px;
+            }
+            .center-buttons {
+                text-align: center;
+                margin-top: 20px;
+            }
+            .radio-group label {
+                margin-right: 10px;
+            }
+            textarea {
+                width: 90%;
+                height: 80px;
+                padding: 5px;
+            }
+
+            table tr td:first-child:not([colspan]) {
+                background-color: #fffacd;
+                text-align: right;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <table>
+                <tr>
+                    <td colspan="2" class="section-header">아이디(ID)정보</td>
+                </tr>
+                <tr>
+                    <td>* 아이디</td>
+                    <td>
+                        <input type="text" />
+                        <button type="button">중복검사</button>
+                        <div class="subtext">(4~12자 영자/숫자 가능. 한글,특수문자 ID는 사용할 수 없습니다.)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>* 비밀번호</td>
+                    <td>
+                        <input type="password" minlength="4" maxlength="8" required />
+                        <span class="subtext">(4~8자 이내로 만들어 주세요)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>* 비밀번호 확인</td>
+                    <td>
+                        <input type="password" minlength="4" maxlength="8" required />
+                        <span class="subtext">(위 번호와 같이 입력해 주세요)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="section-header">개인정보</td>
+                </tr>
+                <tr>
+                    <td>* 이름(한글)</td>
+                    <td>
+                        <input type="text" />
+                        <span class="subtext">(예: 박정현)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>생년월일</td>
+                    <td>
+                        <input type="date" />
+                        <label><input type="radio" name="gender" onclick="toggleRadio(this)" /> 남</label>
+                        <label><input type="radio" name="gender" onclick="toggleRadio(this)" /> 여</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>* 주소</td>
+                    <td>
+                        <input type="text" placeholder="우편번호" />
+                        <button type="button">우편번호 찾기</button><br /><br />
+                        <input type="text" placeholder="상세주소" style="width: 90%" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>* 전화번호</td>
+                    <td>
+                        핸드폰 <input type="tel" />
+                        <label class="radio-group">
+                            <input type="radio" name="carrier" onclick="toggleRadio(this)" /> SKT
+                        </label>
+                        <label class="radio-group">
+                            <input type="radio" name="carrier" onclick="toggleRadio(this)" /> KT
+                        </label>
+                        <label class="radio-group">
+                            <input type="radio" name="carrier" onclick="toggleRadio(this)" /> LGT
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>이메일</td>
+                    <td><input type="email" /></td>
+                </tr>
+                <tr>
+                    <td>가입인사</td>
+                    <td><textarea></textarea></td>
+                </tr>
+            </table>
+
+            <div class="center-buttons">
+                <button type="submit">확인</button>
+                <button type="reset">다시입력</button>
+            </div>
+        </form>
+
+        <script>
+            // 라디오 버튼 취소 가능하게
+            let lastClickedRadio = null;
+            function toggleRadio(radio) {
+                if (lastClickedRadio === radio) {
+                    radio.checked = false;
+                    lastClickedRadio = null;
+                } else {
+                    lastClickedRadio = radio;
+                }
+            }
+        </script>
+    </body>
+</html>

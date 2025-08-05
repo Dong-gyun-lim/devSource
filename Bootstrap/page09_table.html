@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page09_table.html</title>
+        <!-- -------------------------- -->
+        <link rel="stylesheet" href="dist/css/bootstrap.min.css" />
+        <script src="dist/js/bootstrap.min.js"></script>
+        <!-- -------------------------- -->
+    </head>
+    <body>
+        <div class="container">
+            <h1>Table Color</h1>
+            <p>기본클래스: .table .table-primary</p>
+            <table class="table">
+                <thead>
+                    <tr class="table-primary">
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-danger">
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>John@a.b.c</td>
+                    </tr>
+                    <tr class="table-success">
+                        <td>Tom</td>
+                        <td>Doe</td>
+                        <td>tom@a.b.c</td>
+                    </tr>
+                    <tr class="table-warning">
+                        <td>Susan</td>
+                        <td>Doe</td>
+                        <td>susan@a.b.c</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr />
+            <h2>Table Color</h2>
+
+            <table class="table table-bordered table-hover table-sm">
+                <thead>
+                    <tr class="table-info">
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-secondary">
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>John@a.b.c</td>
+                    </tr>
+                    <tr class="table-dark">
+                        <td>Tom</td>
+                        <td>Doe</td>
+                        <td>tom@a.b.c</td>
+                    </tr>
+                    <tr>
+                        <td class="table-danger">Susan</td>
+                        <td class="table-primary">Doe</td>
+                        <td class="table-secondary">susan@a.b.c</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr />
+            <h2>Responsive Table</h2>
+            <p>
+                반응형 테이블을 만들기 위해서는 테이블을 감싸는 div를 주고 <br />
+                div에 class를 .table-responsive를 준다<br />
+                반응형 테이블은 992px 이상일 때는 차이가 없다. <br />
+                그 미만일 때 수평 스크롤바가 생기면서 전체 테이블을 볼 수 있게 한다
+            </p>
+            <div class="table-responsive">
+                <table class="table table-sm table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Email</th>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>John@a.b.c</td>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>John@a.b.c</td>
+                        </tr>
+                        <tr>
+                            <td>Tom</td>
+                            <td>Doe</td>
+                            <td>tom@a.b.c</td>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>John@a.b.c</td>
+                        </tr>
+                        <tr>
+                            <td>Susan</td>
+                            <td>Doe</td>
+                            <td>susan@a.b.c</td>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>John@a.b.c</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
+<!-- page08_table.html -->

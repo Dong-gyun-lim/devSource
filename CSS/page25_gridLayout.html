@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page25_gridLayout.html</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f8f8f8;
+                margin: 30px;
+            }
+
+            h1 {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            .gallery {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr; /* 4열 고정 */
+                gap: 20px;
+                width: 1000px;
+                margin: 0 auto;
+            }
+
+            .gallery-item {
+                background-color: white;
+                border-radius: 10px;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                /* overflow: hidden; */
+            }
+
+            .gallery-item img {
+                width: 100%;
+                height: auto;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+
+            .gallery-content {
+                padding: 15px;
+            }
+
+            .gallery-title {
+                font-weight: bold;
+                font-size: 1em;
+                margin-bottom: 8px;
+            }
+
+            .gallery-desc {
+                font-size: 0.75em;
+                color: #555;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Menu - Grid Gallery</h1>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="images/1.jpg" alt="블루베리요거트스무디" />
+                <div class="gallery-content">
+                    <div class="gallery-title">블루베리요거트스무디</div>
+                    <div class="gallery-desc">새콤달콤한 블루베리와 산뜻한 요거트가 만나 조화로운 스무디</div>
+                </div>
+            </div>
+            <!--  -->
+            <div class="gallery-item">
+                <img src="images/2.jpg" alt="블루베리플럼주스" />
+                <div class="gallery-content">
+                    <div class="gallery-title">블루베리플럼주스</div>
+                    <div class="gallery-desc">
+                        새콤달콤한 블루베리와 식이섬유가 풍부한 플럼, 프리바이오틱스를 더해 건강한 블렌딩 주스
+                    </div>
+                </div>
+            </div>
+            <!--  -->
+            <div class="gallery-item">
+                <img src="images/3.jpg" alt="골드키위주스" />
+                <div class="gallery-content">
+                    <div class="gallery-title">골드키위주스</div>
+                    <div class="gallery-desc">
+                        상큼달콤한 프리미엄 골드키위에 밀크씨슬을 더해 일상의 활력을 선사하는 건강한 블렌딩 주스
+                    </div>
+                </div>
+            </div>
+            <!--  -->
+            <div class="gallery-item">
+                <img src="images/4.jpg" alt="귤 톡톡 젤리스무디" />
+                <div class="gallery-content">
+                    <div class="gallery-title">귤 톡톡 젤리스무디</div>
+                    <div class="gallery-desc">톡톡 터지는 상큼한 귤의 과육과 몽글한 젤리식감이 매력적인 스무디</div>
+                </div>
+            </div>
+            <!--  -->
+            <div class="gallery-item">
+                <img src="images/5.jpg" alt="왕메가카페라떼" />
+                <div class="gallery-content">
+                    <div class="gallery-title">왕메가카페라떼</div>
+                    <div class="gallery-desc">
+                        진한 에스프레소와 부드러운 우유가 어우러져 고소한 풍미를 완성한 메가MGC커피만의 왕메가사이즈
+                        라떼
+                    </div>
+                </div>
+            </div>
+            <!--  -->
+            <div class="gallery-item">
+                <img src="images/6.jpg" alt="디카페인 왕메가카페라떼" />
+                <div class="gallery-content">
+                    <div class="gallery-title">디카페인 왕메가카페라떼</div>
+                    <div class="gallery-desc">
+                        진한 에스프레소와 부드러운 우유가 어우러져 고소한 풍미를 완성한 메가MGC커피만의 왕메가사이즈
+                        라떼
+                    </div>
+                </div>
+            </div>
+            <!--  -->
+            <div class="gallery-item">
+                <img src="images/7.jpg" alt="디카페인 라이트 바닐라 아몬드라떼" />
+                <div class="gallery-content">
+                    <div class="gallery-title">디카페인 라이트 바닐라 아몬드라떼</div>
+                    <div class="gallery-desc">
+                        비건 음료 아몬드브리즈와 칼로리를 낮춘 라이트 바닐라 시럽이 만나 가볍지만 부드~러워진
+                        디카페인라떼
+                    </div>
+                </div>
+            </div>
+            <!--  -->
+            <div class="gallery-item">
+                <img src="images/8.jpg" alt="왕메가사과유자" />
+                <div class="gallery-content">
+                    <div class="gallery-title">왕메가사과유자</div>
+                    <div class="gallery-desc">
+                        애플티의 향긋함과 유자청의 상큼달콤함을 느낄 수 있는 메가MGC커피만의 왕메가사이즈 과일티
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<!-- page25_gridLayout.html -->

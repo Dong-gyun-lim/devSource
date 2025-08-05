@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>감성힙합 추천</title>
+
+        <!-- Bootstrap 5.3.3 CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <!-- Bootstrap 5.3.3 JS (필수는 아니지만, 토글/드롭다운 대비) -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <style>
+            .cta-bar {
+                position: sticky;
+                bottom: 0;
+                width: 100%;
+                background-color: antiquewhite;
+                color: #000;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row g-0">
+                <!-- 좌측 사이드바 -->
+                <aside class="col-12 col-md-3 col-lg-2 sidebar p-3 d-flex flex-column">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <span class="brand-dot"></span>
+                        <strong>감성힙합</strong>
+                    </div>
+
+                    <nav class="mb-4">
+                        <a class="d-block link-muted py-1" href="#">내 라이브러리</a>
+                        <a class="d-block link-muted py-1" href="#">최근 감상</a>
+                        <a class="d-block link-muted py-1" href="#">플레이리스트</a>
+                        <a class="d-block link-muted py-1" href="#">아티스트</a>
+                        <a class="d-block link-muted py-1" href="#">앨범</a>
+                    </nav>
+
+                    <div class="panel p-3 mb-3">
+                        <div class="fw-semibold mb-1">첫 번째 플레이리스트를 만드세요.</div>
+                        <div class="text-secondary small mb-3">어렵지 않아요. 저희가 도와드릴게요.</div>
+                        <button class="btn btn-light btn-sm fw-semibold">플레이리스트 만들기</button>
+                    </div>
+
+                    <div class="panel p-3">
+                        <div class="fw-semibold mb-1">팔로우할 팟캐스트를 찾아보세요</div>
+                        <div class="text-secondary small mb-3">새로운 에피소드에 대한 소식을 알려드릴게요.</div>
+                        <button class="btn btn-outline-light btn-sm">팟캐스트 둘러보기</button>
+                    </div>
+
+                    <div class="mt-auto pt-4">
+                        <div class="small text-secondary">© hiptify , 2025</div>
+                    </div>
+                </aside>
+
+                <!-- 우측 메인 영역 -->
+                <main class="col-12 col-md-9 col-lg-10 p-3 p-md-4">
+                    <!-- 상단 바 -->
+                    <div class="d-flex flex-wrap align-items-center justify-content-between mb-4 gap-3">
+                        <div class="d-flex align-items-center gap-3">
+                            <button class="btn btn-outline-light btn-sm rounded-pill px-3">Premium</button>
+                            <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="#">앱 설치하기</a>
+                        </div>
+
+                        <div class="search-wrap flex-grow-1 mx-md-4">
+                            <div class="input-group">
+                                <span class="input-group-text">🎵</span>
+                                <input class="form-control" placeholder="듣고 싶은 곡, 가수 검색" />
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-2">
+                            <button class="btn btn-light btn-sm rounded-pill px-3">로그인</button>
+                        </div>
+                    </div>
+
+                    <!-- 섹션: 인기 상승 곡 -->
+                    <section class="mb-5">
+                        <div class="section-title">인기 상승 곡</div>
+                        <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-5 g-3">
+                            <!-- 카드 샘플 1 -->
+                            <div class="col">
+                                <div class="card bg-dark text-light border-0 h-100">
+                                    <div class="cover cover-square w-100"></div>
+                                    <div class="card-body">
+                                        <div class="fw-semibold">밤길 (Remix)</div>
+                                        <div class="text-secondary small">Gloomy Boy • Single</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 2 -->
+                            <div class="col">
+                                <div class="card bg-dark text-light border-0 h-100">
+                                    <div class="cover cover-square w-100"></div>
+                                    <div class="card-body">
+                                        <div class="fw-semibold">Rain Tape</div>
+                                        <div class="text-secondary small">Soulchild • EP</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 3 -->
+                            <div class="col">
+                                <div class="card bg-dark text-light border-0 h-100">
+                                    <div class="cover cover-square w-100 position-relative"></div>
+                                    <div class="card-body">
+                                        <div class="fw-semibold">Golden Hour</div>
+                                        <div class="text-secondary small">LO-FI POET • Single</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 4 -->
+                            <div class="col">
+                                <div class="card bg-dark text-light border-0 h-100">
+                                    <div class="cover cover-square w-100"></div>
+                                    <div class="card-body">
+                                        <div class="fw-semibold">JUMP</div>
+                                        <div class="text-secondary small">BLK PINK • Single</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 5 -->
+                            <div class="col">
+                                <div class="card bg-dark text-light border-0 h-100">
+                                    <div class="cover cover-square w-100"></div>
+                                    <div class="card-body">
+                                        <div class="fw-semibold">Which One</div>
+                                        <div class="text-secondary small">Drake • Central Cee</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 섹션: 인기 아티스트 -->
+                    <section class="mb-5">
+                        <div class="section-title">인기 아티스트</div>
+                        <div class="row row-cols-3 row-cols-sm-4 row-cols-lg-7 g-3">
+                            <div class="col text-center">
+                                <div class="avatar mx-auto mb-2"></div>
+                                <div class="small">김승민</div>
+                                <div class="text-secondary small">아티스트</div>
+                            </div>
+                            <div class="col text-center">
+                                <div class="avatar mx-auto mb-2"></div>
+                                <div class="small">파테코</div>
+                                <div class="text-secondary small">아티스트</div>
+                            </div>
+                            <div class="col text-center">
+                                <div class="avatar mx-auto mb-2"></div>
+                                <div class="small">키드와인</div>
+                                <div class="text-secondary small">아티스트</div>
+                            </div>
+                            <div class="col text-center">
+                                <div class="avatar mx-auto mb-2"></div>
+                                <div class="small">릴러말즈</div>
+                                <div class="text-secondary small">아티스트</div>
+                            </div>
+                            <div class="col text-center">
+                                <div class="avatar mx-auto mb-2"></div>
+                                <div class="small">토일</div>
+                                <div class="text-secondary small">아티스트</div>
+                            </div>
+                            <div class="col text-center">
+                                <div class="avatar mx-auto mb-2"></div>
+                                <div class="small">재하</div>
+                                <div class="text-secondary small">아티스트</div>
+                            </div>
+                            <div class="col text-center">
+                                <div class="avatar mx-auto mb-2"></div>
+                                <div class="small">현서</div>
+                                <div class="text-secondary small">아티스트</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 섹션: 감성 힙합 플레이리스트 -->
+                    <section class="mb-5">
+                        <div class="section-title">감성 힙합 플레이리스트</div>
+                        <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-6 g-3">
+                            <!-- 카드 반복 -->
+                            <div class="col">
+                                <div class="card bg-dark text-light border-0 h-100">
+                                    <div class="cover cover-square w-100"></div>
+                                    <div class="card-body">
+                                        <div class="fw-semibold">해질녘 Lo-Fi</div>
+                                        <div class="text-secondary small">차분 • 집중 • 여유</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card bg-dark text-light border-0 h-100">
+                                    <div class="cover cover-square w-100"></div>
+                                    <div class="card-body">
+                                        <div class="fw-semibold">비 오는 밤</div>
+                                        <div class="text-secondary small">Lo-fi • 감성힙합</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card bg-dark text-light border-0 h-100">
+                                    <div class="cover cover-square w-100"></div>
+                                    <div class="card-body">
+                                        <div class="fw-semibold">새벽 감성</div>
+                                        <div class="text-secondary small">Chill • Soft rap</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card bg-dark text-light border-0 h-100">
+                                    <div class="cover cover-square w-100"></div>
+                                    <div class="card-body">
+                                        <div class="fw-semibold">캔들라이트</div>
+                                        <div class="text-secondary small">Mood • Study</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card bg-dark text-light border-0 h-100">
+                                    <div class="cover cover-square w-100"></div>
+                                    <div class="card-body">
+                                        <div class="fw-semibold">감성힙합 BEST</div>
+                                        <div class="text-secondary small">최신 • 인기</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card bg-dark text-light border-0 h-100">
+                                    <div class="cover cover-square w-100"></div>
+                                    <div class="card-body">
+                                        <div class="fw-semibold">카페 비트</div>
+                                        <div class="text-secondary small">Cafe • Lo-fi</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
+
+        <!-- 하단 무료가입 바 -->
+        <div class="cta-bar py-3 px-3 px-md-4 mt-3">
+            <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+                <div class="small fw-semibold">감성힙합 미리 듣기!</div>
+                <div class="small">무제한으로 듣고 싶으시다면 가입하세요.</div>
+                <button class="btn btn-light btn-sm fw-bold rounded-pill px-3">무료로 가입하기</button>
+            </div>
+        </div>
+    </body>
+</html>

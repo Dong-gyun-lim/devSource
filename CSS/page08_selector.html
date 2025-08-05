@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page08_selector.html</title>
+        <style>
+            /* 처음 링크시: 방문전 */
+            a:link {
+                text-decoration: none;
+                color: red;
+            }
+            /* 링크 방문 후 */
+            a:visited {
+                color: green;
+            }
+            /* 링크: 마우스 클릭시 */
+            a:active {
+                color: purple;
+                font-size: 150%;
+            }
+            a:hover {
+                background-color: sandybrown;
+                font-size: 1.3em;
+            }
+            /* input 요소중 비활성화된 요소를 선택해서 배경색을 #ddd로 주고
+            글자 색은 tomato색으로 주세요 */
+            input:disabled {
+                background-color: #ddd;
+                color: tomato;
+            }
+
+            /* input 요소중 입력 포커스가 왔을 때 테두리를 red 실선으로 주세요 :focus */
+            input:focus {
+                border: 1px solid red;
+            }
+            /* button에 마우스오버시 배경색과 글자색 알아서 padding: 10px */
+            button:hover {
+                background-color: aqua;
+                color: darkgreen;
+                padding: 10px;
+                border: none;
+                font-weight: bold;
+            }
+
+            /* class가 google인 요소를 선택해서 배경색 */
+            h1.google {
+                background-color: violet;
+                color: navy;
+            }
+            /* class가 google이 아닌 요소를 선택해서 배경색(beige) 
+                선택자:not(조건) : 조건이 아닌 요소를 선택
+            */
+            a:not(.google) {
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="google">가상 선택자 / 가상 클래스 선택자</h1>
+        <p>특정 상태나 가상 액션 상황을 가정한 선택자</p>
+        <hr />
+        <h2>하이퍼 링크 스타일</h2>
+        <a href="http://www.naver.com">네이버</a><br /><br />
+        <a href="http://www.google.com" class="google">구글</a><br /><br />
+        <a href="http://www.daum.net" class="daum">다음</a><br /><br />
+        <a href="http://www.nate.com" class="nate">네이트</a><br /><br />
+
+        <hr color="red" />
+        user: <input type="text" value="apple" disabled /><br />
+        password: <input type="password" name="pwd" id="pwd" /><br />
+        <button>로그인</button>
+    </body>
+</html>
+
+<!-- page08_selector.html -->

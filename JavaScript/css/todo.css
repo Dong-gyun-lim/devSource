@@ -1,0 +1,17 @@
+@charset "utf-8"
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+#wrap {
+    width: 50%;
+    margin: auto;
+}
+
+#todoInput {
+    width: 200px;
+    padding 7px;
+    border: 1px solid #aaa
+}
