@@ -1,36 +1,53 @@
-@charset "utf-8"
+@charset "utf-8";
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
 }
-
 #wrap {
     width: 50%;
     margin: auto;
 }
-
 #todoInput {
     width: 200px;
-    padding 7px;
-    border: 1px solid #aaa
+    padding: 7px;
+    border: 1px solid #aaa;
 }
-
-#btnAdd {
+button {
     background-color: red;
     color: white;
     padding: 6px 10px;
     border: none;
     border-radius: 5px;
 }
-#btnAdd:hover {
+button:hover {
     background-color: darkviolet;
+}
+#todoList {
+    padding: 0;
+    width: 90%;
+    margin: 1em auto;
 }
 #todoList > li {
     list-style: none;
     background-color: blanchedalmond;
     padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+    width: 80%;
+    margin: 5px 0;
 }
 .item label {
-
+    width: 40%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.item input[type='checkbox'] {
+    margin-left: 1em;
+}
+.complete {
+    text-decoration: line-through;
+    opacity: 0.7;
 }
