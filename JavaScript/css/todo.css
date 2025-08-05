@@ -15,3 +15,22 @@ body {
     padding 7px;
     border: 1px solid #aaa
 }
+
+#btnAdd {
+    background-color: red;
+    color: white;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 5px;
+}
+#btnAdd:hover {
+    background-color: darkviolet;
+}
+#todoList > li {
+    list-style: none;
+    background-color: blanchedalmond;
+    padding: 10px;
+}
+.item label {
+
+}
