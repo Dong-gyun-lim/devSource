@@ -3,29 +3,33 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <!-- jquery lib ---------------- -->
+        <title>page01</title>
+        <!-- jquery lib ------------------------ -->
         <script src="js/jquery-3.7.1.min.js"></script>
-        <!-- --------------------------- -->
+        <!-- ------------------------------------ -->
         <script>
+            //[1] JavaScript
+            //id가 a인 요소를 선택해서 <h3>Hello JavaScript</h3> 글자색: blue
             document.addEventListener('DOMContentLoaded', () => {
                 const div = document.getElementById('a');
-                div.innerHTML = '<h3>Heloo JavaScript</h3>';
+                div.innerHTML = '<h3>Hello JavaScript~</h3>';
                 div.style.color = 'blue';
             });
-            //[2]jQuery
-            //jQuery()함수를 사용 => 축약해서 $() === jQuery()와 동일
+            // [2]jQuery1
+            //jQuery()함수를 사용 => 축약해서 $() ===jQuery()와 동일
             $(document).ready(() => {
+                //id가 b인 요소를 선택해서 <h3>Hello jQuery</h3> 글자색: red
                 jQuery('#b').html('<h3>Hello jQuery</h3>').css('color', 'red');
             });
-
+            // [3] jQuery2
             $(function () {
-                $('#c').html('<h3>Good Bye jQuery</h3>').css({
+                // id가 c인 객체 찾아서 'Good Bye jQuery~'
+                //문자열 넣고 스타일 배경색, 패딩, 테두리 적용하세요
+                $('#c').html('<h3>Good Bye jQuery~</h3>').css({
                     // 'background-color': 'beige',
                     backgroundColor: 'beige',
-                    color: 'violet',
                     padding: '.8em',
-                    border: '1px dashed skyblue',
+                    border: 'thick dashed skyblue',
                 });
             });
         </script>
