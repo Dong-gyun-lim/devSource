@@ -8,6 +8,9 @@ import MyComp2 from './components/MyComp2';
 import PageNotFound from './components/PageNotFound';
 import Side from './components/Side';
 import UseEffectHook from './components/UseEffectHook';
+import TimerClock from './components/TimerClock';
+import UserDetail from './components/UserDetail';
+import Boards from './components/Boards';
 
 function App() {
     return (
@@ -34,6 +37,10 @@ function App() {
                                 <Route path="/comp1" element={<MyComp1 />} />
                                 <Route path="/comp2" element={<MyComp2 />} />
                                 <Route path="/hook1" element={<UseEffectHook />} />
+                                <Route path="/hook2" element={<TimerClock />} />
+                                <Route path="/users/:id" element={<UserDetail />} />
+                                <Route path="/boards" element={<Boards />} />
+
                                 <Route path="/*" element={<PageNotFound />} />
                             </Routes>
                         </Col>
