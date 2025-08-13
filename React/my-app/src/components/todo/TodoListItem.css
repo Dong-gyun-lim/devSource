@@ -1,18 +1,28 @@
-.todo-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 6px 0;
-  border-bottom: 1px solid #ddd;
+/* TodoListItem.css */
+.TodoListItem {
+    display: flex;
+    margin: 1.5em auto;
+    padding: 1.1em;
+    /* justify-content: space-around; */
+    align-items: center;
+    gap: 1.5em;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.3rem;
 }
-
-.todo-item button {
-  background-color: red;
-  color: white;
-  border: none;
-  cursor: pointer;
-  padding: 4px 8px;
+.TodoListItem .chkbox {
+    width: 20px;
 }
-
-.todo-item button:hover {
-  background-color: darkred;
+.TodoListItem .content {
+    flex: 1;
+}
+.TodoListItem .content.done {
+    text-decoration: line-through;
+    color: darkgray;
+}
+/* isDone이 true  className='content done'
+            false className='content'
+*/
+.TodoListItem .wdate {
+    font-size: 0.9rem;
+    color: darkblue;
 }

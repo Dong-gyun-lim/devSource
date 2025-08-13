@@ -1,4 +1,4 @@
-import {useState} from 'react';// Parent.jsx
+// Parent.jsx
 //부모 컴포넌트: Parent
 //자식 컴포넌트: Child
 //부모 ===> 자식 : props로 전달
