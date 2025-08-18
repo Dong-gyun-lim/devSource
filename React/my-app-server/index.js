@@ -14,7 +14,7 @@ let idCnt = users.length;
 //post '/api/signup'
 app.post('/api/signup', (req, res) => {
     //회원정보는 post방식일 때 request의 body에 포함되어 온다
-    const { name, passwd, email, role } = req.body;
+    const { name, passwd, email, role } = req.body || {};
     console.log(name, passwd, email, role);
     //유효성 체크
     if (!name || !passwd || !email || !role) {
