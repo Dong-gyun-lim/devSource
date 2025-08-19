@@ -1,13 +1,20 @@
 use kbdb;
 show databases;
 show tables;
+-- DDL 문장 (Data Definition Language) : create, drop, alter, truncate
+-- DML 문장 (Data Manipulation Language) : insert, delete, update, select
+-- DQL 문장 (Data Query Language) : select문
+-- TCL 문장 (Transaction Control Language) : commit, rollback
+-- DCL 문장 (Data Control Language) :grant to , revoke
 -- 회원 테이블 생성문
+-- drop table if exists members; --테이블 삭제
+
 create table if not exists members(
-	id int primary key auto_increment, -- 회원번호(PK)
+   id int primary key auto_increment, -- 회원번호 (PK)
     name varchar(30) not null, -- 회원명
     email varchar(50) not null unique, -- 이메일 (로그인시 id로 사용)
     passwd varchar(100) not null, -- 비밀번호 (암호화된 비번)
-    role varchar(30) not null default 'USER', -- 역할 (USER 또는 ADMIN)
+    role varchar(30) not null default 'USER', -- 역할 ( USER 또는 ADMIN)
     createdAt date default (current_date()), -- 가입일
     refreshtoken varchar(512) default null -- 회원 인증시 사용
 );
@@ -15,21 +22,22 @@ create table if not exists members(
 desc members;
 -- devSource\SQL\members.sql
 -- 새로운 데이터 삽입 : insert 문
--- insert into 테이블 명 (컬럼명1, 컬럼명2, ...)
--- values('값1','값2',...)
+-- insert into 테이블명 (컬럼명1, 컬럼명2, ...) 
+-- values ('값1', '값2',...)
 
-insert into members (name,email,passwd)
+insert into members (name, email,passwd)
 values ('홍길동','hong@naver.com','111');
 commit;
 
 -- 데이터 조회
--- select 컬럼명1, 컬럼명2, ... from 테이블명;
-select id, name, email, passwd, role, createdat, refreshtoken from members;
+-- select 컬럼명1, 컬럼명2,... from 테이블명;
+select id,name,email,passwd,role,createdat,refreshtoken from members;
 
 select * from members where id=1;
 
--- 김관리 admin@master.com 111 ADMIN 회원 정보를 삽입하세요
-insert into members (name, email, passwd, role)
-values ('김관리', 'admin@master.com', '111', 'ADMIN');
+-- 김관리  admin@master.com  111 ADMIN 회원정보를 삽입하세요
+insert into members (name,passwd,email,role)
+values('김관리','111','admin@master.com','ADMIN');
 -- 조회하기
-select * from members
+SELECT * FROM MEMBERS;
+
