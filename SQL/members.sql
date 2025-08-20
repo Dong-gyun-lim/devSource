@@ -41,3 +41,35 @@ values('김관리','111','admin@master.com','ADMIN');
 -- 조회하기
 SELECT * FROM MEMBERS;
 
+use kbdb;
+
+select * from members order by id desc;
+
+select * from members order by id desc;
+
+-- %Y : 년도 4자리
+-- %y : 년도 2자리
+-- %m : 월 2자리
+-- %d : 일 2자리
+-- %H : 시간 (24시간 기준)
+-- %i : 분
+-- %s : 초
+
+select id, name, email, role, date_format(createdAt, '%Y-%m-%d %H:%i:%s')
+from members order by id desc;
+
+select id, name, email, role,
+       date_format(createdAt, '%Y-%m-%d') createdAt
+from members
+where id = 3;
+
+-- 로그인
+-- email, passwd 일치 여부
+-- hong@naver.com   123
+select * from members
+where email = 'hong@naver.com';
+
+-- and, or 연산자
+select * from members
+where email = 'hong@naver.com' and passwd = '123';
+
