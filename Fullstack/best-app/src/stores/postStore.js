@@ -2,13 +2,16 @@
 // 서버 통신 로직 중심 스토어
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
-import { apiFetchPostList, apiDeletePost } from '../api/postApi';
+import { apiFetchPostList, apiDeletePost, apiFetchPostById, apiUpdatePost } from '../api/postApi';
+
 export const usePostStore = create(
     devtools((set) => ({
         postList: [], //글목록
         totalCount: 0, //총 게시글 수
         post: null, //특정 게시글
+        postErr: null,
         //글목록 가져오기
+        resetPostErr: () => set({ postErr: null }),
         fetchPostList: async () => {
             //api호출=> 데이터 받아오면 ==> set()
             try {
@@ -25,13 +28,34 @@ export const usePostStore = create(
         deletePost: async (id) => {
             try {
                 await apiDeletePost(id);
+                set({ post: null });
+                return true;
             } catch (error) {
                 alert('글 삭제 실패: ' + error.message);
+                return false;
             }
         },
-        //글번호로 
-        fetchPostById: async(id)=>{
+        //글번호로
+        fetchPostById: async (id) => {
             // apiFetchPostById(id)==> set( {post: response.data} )
-        }
+            try {
+                const postData = await apiFetchPostById(id);
+                set({ post: postData, postErr: null });
+            } catch (error) {
+                console.error(error);
+                //alert('글 내용보기 실패: 해당 글은 없습니다');
+                set({ post: null, postErr: '글 내용 보기 실패. 해당 글은 없습니다 ' + error.message });
+            }
+        },
+        //글 수정 처리
+        updatePost: async (id, FormData) => {
+            try {
+                await apiUpdatePost(id, formData);
+            } catch (error) {
+                console.error(error);
+                //alert('수정 실패: '+ error.message)
+                return false;
+            }
+        },
     }))
 );

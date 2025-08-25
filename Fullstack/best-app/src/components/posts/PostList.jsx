@@ -7,20 +7,12 @@ export default function PostList() {
     const postList = usePostStore((s) => s.postList);
     const totalCount = usePostStore((s) => s.totalCount);
     const fetchPostList = usePostStore((s) => s.fetchPostList);
-    const deletePost = usePostStore((s) => s.deletePost);
-
+    const totalPages = usePostStore((s) => s.totalPages);
+    const setPage = usePostStore((s) => s.setPage);
+    const page = usePostStore((s) => s.page);
     useEffect(() => {
         fetchPostList();
-    }, []);
-
-    const handleDelete = async (pid) => {
-        //alert(pid);
-        const yn = confirm(`${pid}번 글을 정말 삭제할까요?`);
-        if (!yn) return;
-        //
-        await deletePost(pid);
-        await fetchPostList();
-    };
+    }, [page]);
 
     return (
         <div className="post-list">
@@ -58,21 +50,28 @@ export default function PostList() {
                                     <i className="text-muted">Posted on {post.wdate}</i>
                                 </small>
                             </h5>
-                            <Link to={`/posts/${post.id}`}>
-                                <h2>{post.title}</h2>
+                            <Link to={`/posts/${post.id}`} style={{ textDecoration: 'none' }}>
+                                <h3>{post.title}</h3>
                             </Link>
 
-                            <p>{post.content}</p>
-                            <div className="d-flex justify-content-center">
+                            {/* <p>{post.content}</p> */}
+                            {/* <div className="d-flex justify-content-center">
                                 <button className="btn btn-outline-info mx-1">Edit</button>
                                 <button className="btn btn-outline-danger" onClick={() => handleDelete(post.id)}>
                                     Delete
                                 </button>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 ))}
             {/* 페이지네이션 */}
+            <div className="text-center">
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((n) => (
+                    <button className="btn btn-outline-primary" onClick={() => setPage(n)}>
+                        {n}
+                    </button>
+                ))}
+            </div>
         </div>
     );
 }
