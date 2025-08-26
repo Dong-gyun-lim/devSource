@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page16_function.html</title>
+        <script>
+            // [방법1] 윈도우창에 모든 리소스가 로드되고 난 후에 할당된 함수를 실행시킨다
+            /*
+            window.onload = function () {
+                let input1 = document.getElementById('num1');
+                //alert(input1); //null=>[object HTMLInputElement]
+                let val1 = input1.value;
+                alert(val1);
+            };
+            */
+            //[방법2] HTML 객체들의 내용이 로드되고 난 후에 실행된다
+            document.addEventListener('DOMContentLoaded', function () {
+                //alert('hi');
+                let input1 = document.getElementById('num1');
+                input1.style.border = '1px solid red';
+                input1.style.padding = '3px';
+            });
+            //form이름.input이름.value
+        </script>
+    </head>
+    <body>
+        <div class="wrap">
+            값1: <input type="text" id="num1" value="555" /><br /><br />
+            값1: <input type="text" id="num2" value="111" /><br /><br />
+            결과: <input type="text" id="result" readonly /><br /><br />
+            <button class="btn1">값1 입력값 알아내기(isNaN함수)</button>
+            <button class="btn2">값2 입력값 알아내기(eval함수)</button>
+            <button onclick="plus()">더하기</button>
+            <button onclick="multiply()">곱하기</button>
+        </div>
+
+        <script>
+            let input2 = document.getElementById('num2');
+            input2.style.border = '1px solid blue';
+            input2.style.padding = '3px';
+            // alert(input2.value);
+
+            //plus()함수 구성해서 값1, 값2 더한 결과를 id가 result인 곳에 출력하기
+            //function plus(){}
+            function plus() {
+                //id명 선택해서 가져옴
+                let n1 = document.getElementById('num1').value;
+                //css 선택자를 이용해 가져온다
+                let n2 = document.querySelector('#num2').value;
+                document.querySelector('#result').value = Number(n1) + Number(n2);
+            }
+            //multiply();[x]
+            //multiply()함수=> 리터럴 방식으로 구성해서 결과 #result인 곳에 출력하세요
+            const multiply = function () {
+                let n1 = document.getElementById('num1').value; //string
+                let n2 = document.querySelector('#num2').value;
+
+                //alert('3' * '2'); //문자열 곱셈도 수행 (*,-,/)
+                //더하기일 경우는 문자열 결합=> 숫자로 변환
+                document.getElementById('result').value = n1 * n2;
+            };
+
+            // class가 btn1인 객체를 가져오세요
+            const b1 = document.querySelector('.btn1');
+            b1.addEventListener('click', function () {
+                //alert('hi');
+                //isNaN()호출해서 input1에 입력한 값이 숫자가 아니면 "숫자를 입력하세요" alert로 띄우고 input1의 값 비워주기
+                //isNaN()=>숫자가 아니면 true반환
+                let n1 = document.getElementById('num1').value;
+                //alert(isNaN(n1));
+                if (isNaN(n1)) {
+                    alert('숫자를 입력하세요');
+                    document.getElementById('num1').value = '';
+                    document.getElementById('num1').focus();
+                }
+            });
+
+            // class btn2인 객체 가져오기
+            const b2 = document.querySelector('.btn2');
+            b2.onclick = function () {
+                //alert('hi');
+                let input2 = document.querySelector('#num2').value;
+
+                let result = document.querySelector('#result');
+
+                result.value = eval(input2);
+                //수식을 실행하여 그 결과값을 반환함
+            };
+
+            //alert(b1);
+        </script>
+    </body>
+</html>
+<!-- page16_function.html -->

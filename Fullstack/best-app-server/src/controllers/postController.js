@@ -39,6 +39,7 @@ exports.listPost = async (req, res) => {
     //현재 보여줄 페이지 번호 받기 => 요청 쿼리 스트링에서 추출
     let page = parseInt(req.query.page) || 1; //현재 보여줄 페이지 번호
     const size = parseInt(req.query.size) || 3; //한 페이지 당 보여줄 목록 개수
+    console.log('page: ', page, 'size: ', size);
 
     try {
         //1. 전체 게시글 수 가져오기
@@ -61,7 +62,7 @@ exports.listPost = async (req, res) => {
         //2. 전체 게시목록 가져오기
         const sql2 = `select id,name,title,content,
         attach as file, date_format(wdate,'%Y-%m-%d') as wdate
-        from posts order by id desc limit ? offset ?`;
+        from posts order by id desc limit ? offset ?`; //limit ?,? ==> [offset, size]
         const [posts] = await pool.query(sql2, [size, offset]);
         console.log('posts: ', posts);
 

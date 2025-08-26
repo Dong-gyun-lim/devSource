@@ -14,9 +14,28 @@ export default function PostList() {
         fetchPostList();
     }, [page]);
 
+    // 페이지 계산
+    const blockSize = 5;
+    const startPage = Math.floor((page - 1) / blockSize) * blockSize + 1;
+    const endPage = Math.min(startPage + (blockSize - 1), totalPages);
+
+    /**
+     * [1][2][3][4][5] >|< [6][7][8][9][10] >|<[11][12][13][14][15] >[16][17][18]
+     *
+     * page         blockSize       startPage       endPage
+     * 1 ~5             5           1               5
+     * 6~ 10            5           6               10
+     * 11 ~15           5           11              15
+     *
+     * startPage = Math.floor((page-1)/blockSize) * blockSize +1
+     */
+
     return (
         <div className="post-list">
-            <h3 className="my-3"> 총 게시글 수: {totalCount} 개</h3>
+            <h3 className="my-3">
+                {' '}
+                총 게시글 수: {totalCount} 개 {'     '} {page} page / {totalPages} pages
+            </h3>
 
             {postList.length === 0 && <div>데이터가 없습니다</div>}
             {postList.length > 0 &&
@@ -66,11 +85,24 @@ export default function PostList() {
                 ))}
             {/* 페이지네이션 */}
             <div className="text-center">
-                {Array.from({ length: totalPages }, (_, i) => i + 1).map((n) => (
-                    <button className="btn btn-outline-primary" onClick={() => setPage(n)}>
+                {startPage > 1 && (
+                    <button className="btn btn-outline-primary" onClick={() => setPage(startPage - 1)}>
+                        Prev
+                    </button>
+                )}
+                {Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i).map((n) => (
+                    <button
+                        className={`mx-1 btn ${n === page ? 'btn-primary' : 'btn-outline-primary'}`}
+                        onClick={() => setPage(n)}
+                    >
                         {n}
                     </button>
                 ))}
+                {endPage < totalPages && (
+                    <button className="btn btn-outline-primary" onClick={() => setPage(endPage + 1)}>
+                        Next
+                    </button>
+                )}
             </div>
         </div>
     );

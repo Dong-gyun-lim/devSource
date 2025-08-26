@@ -46,7 +46,7 @@ router.get('/:id', postController.getPostById);
 //글 번호로 삭제 처리
 router.delete('/:id', postController.deletePost);
 
-// 글 수정 처리
+//글 수정 처리
 router.put('/:id', upMulter.single('file'), postController.updatePost);
 
 module.exports = router;

@@ -23,8 +23,11 @@ export const apiCreatePostFileUp = async (data) => {
     return response.data;
 };
 //--- post 목록 가져오기 ------------------------------
-export const apiFetchPostList = async () => {
-    const response = await axiosInstance.get(`/posts`);
+export const apiFetchPostList = async (page = 1, size = 3, query = undefined) => {
+    console.log('page=====', page);
+    //alert(page);
+    const response = await axiosInstance.get(`/posts`, { params: { page, size, query } });
+                                    // `/posts?page=${page}&size=${size}&query=${query}`
     return response.data;
 };
 //---post 글 삭제하기 ----------------------------------
@@ -41,12 +44,11 @@ export const apiFetchPostById = async (id) => {
     }
     return null;
 };
-//---post글 수정하기 -------------------------------------
-export const apiUpdatePost = async(id, formData)=> {
+//---post글 수정하기 -----------------------------------
+export const apiUpdatePost = async (id, formData) => {
     await axiosInstance.put(`/posts/${id}`, formData, {
         headers: {
-            'Content-Type': 'multipart/form-data'
-        }
-    })
-}
+            'Content-Type': 'multipart/form-data',
+        },
+    });
 };

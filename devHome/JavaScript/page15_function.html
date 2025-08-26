@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>page15_function.html</title>
+    </head>
+    <body>
+        <h1>함수- function</h1>
+        <p>
+            함수 구성방법
+            <ul>
+                <li>[1] function 함수명(){}</li>
+                <li>[2] literal 방식으로 구성하는 방법: const 함수명=function(){} </li>
+            </ul>
+        </p>
+        <hr>
+        <script>
+            showStar(20) //hoisting (끌어올림) 이 지원된다 (리터럴 방식은 안된다)
+            // [1] 방식
+            function showStar(num){
+                for(let i=0;i<num;i++){
+                    document.write('★')
+                }
+                document.write('<hr>')
+            }
+            //함수 호출
+            showStar(10)
+            //[2] 방식: 함수명 showShape(str, num)==>literal방식으로 구현해보세요
+            //hoisting이 지원되지 않음. 함수를 구성한 뒤에 호출할 수 있다.
+           //showShape('#',10) //[x]
+
+            const showShape = function(str, num){
+                 for(let i=0;i<num;i++){
+                    document.write(str)
+                 }
+                 document.write('<hr>')
+            }
+            showShape('♥',30)
+            showShape('@',5)
+        </script>
+    </body>
+</html>
+<!-- page15_function.html -->
