@@ -25,5 +25,13 @@ public class HomeController {
         //resources/templates/home.html
     }
 
+    @RequestMapping("/test")
+    public String showMessage(Model model){
+        model.addAttribute("msg","Post글쓰기 성공");
+        model.addAttribute("loc","/");
+        
+        return "message";
+    }
+
 
 }
